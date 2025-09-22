@@ -8,7 +8,7 @@
     >
       <div class="w-full md:w-2/5 flex items-end justify-center md:justify-end">
         <img
-          src="@/assets/images/lightBulb2.png"
+          src="@/assets/images/draw_wall.jpg"
           alt="Card Image"
           class="w-full h-full object-cover object-center rounded-xl"
         />
@@ -16,26 +16,10 @@
       <div
         class="p-4 md:p-10 flex flex-col justify-center w-full md:flex-1 text-sm md:text-lg"
       >
-        <h2 class="text-xl md:text-2xl mb-2 md:mb-2">
-          <span>
-            <CJKSub align="center">
-              <template #zh>
-                <span class="text-xl md:text-2xl">主題</span>
-              </template>
-              <template #en>Issue</template>
-            </CJKSub>
-          </span>
-          ：{{ info.title }}
-        </h2>
+        <h2 class="text-xl md:text-2xl mb-2 md:mb-2">主題：{{ info.title }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4">
           <p class="mb-2">
-            <CJKSub align="center">
-              <template #zh>
-                <span class="text-lg md:text-xl">時間</span>
-              </template>
-              <template #en>Time</template>
-            </CJKSub>
-            ：{{
+            時間 ：{{
               info.startTime && info.endTime
                 ? new Date(info.startTime * 1000).toLocaleDateString() +
                   " ~ " +
@@ -43,32 +27,10 @@
                 : "無"
             }}
           </p>
-          <p class="text-md mb-2">
-            <CJKSub align="left">
-              <template #zh>
-                <span class="text-lg md:text-xl">成員</span>
-              </template>
-              <template #en>Member</template>
-            </CJKSub>
-            ：{{ info.group }}
-          </p>
-          <p class="text-md mb-2 md:col-span-2">
-            <CJKSub align="left">
-              <template #zh>
-                <span class="text-lg md:text-xl">描述</span>
-              </template>
-              <template #en>Description</template>
-            </CJKSub>
-            ：{{ info.intro }}
-          </p>
+          <p class="text-md mb-2">成員：{{ info.group }}</p>
+          <p class="text-md mb-2 md:col-span-2">描述 ：{{ info.intro }}</p>
           <div class="flex items-center w-full md:w-70 gap-3 md:col-span-2">
-            <CJKSub align="left">
-              <template #zh>
-                <span class="text-lg md:text-xl">進度</span>
-              </template>
-              <template #en>Progress</template>
-            </CJKSub>
-            ：
+            進度：
             <!-- Progress Bar -->
             <div
               class="relative flex-1 bg-gray-200 rounded-full h-2 overflow-hidden"
@@ -100,7 +62,6 @@
 </template>
 <script setup>
 import { useRouter } from "vue-router";
-import CJKSub from "@/components/CJKSub.vue";
 
 const router = useRouter();
 

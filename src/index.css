@@ -2,7 +2,11 @@
 
 @theme {
   --font-huninn: 'jf-openhuninn', 'sans-serif';
-  --color-brown-400: #71451c;
+
+  --color-orange-dark: #E5723A;
+  --color-orange-default: #E99166;
+  --color-orange-tint: #ECD7A3;
+  --color-green-text: #1A4B3E;
 }
 
 body {
