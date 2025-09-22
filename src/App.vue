@@ -49,6 +49,9 @@
         'fixed top-0 left-0 w-full flex flex-col justify-center items-center gap-8 transition-transform duration-300 ease-in-out md:relative md:h-[4rem] md:w-auto md:bg-transparent md:flex-row md:gap-3 text-xl md:text-2xl md:whitespace-nowrap',
         isMenuOpen ? 'h-screen' : 'h-0',
         isMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0',
+        isMenuOpen
+          ? 'bg-[url(@/assets/images/Mobile/mobile_Bcakground.png)] bg-cover bg-center overflow-hidden'
+          : '',
       ]"
       class="md:text-shadow-none"
     >
@@ -91,18 +94,20 @@
 
       <!-- 身分顯示/登出 -->
       <div class="px-4 text-rice-500 text-shadow-3d">
-        <div class="p-3" v-if="!isAuthenticated">
-          <router-link
+        <!-- <div class="p-3" v-if="!isAuthenticated"> -->
+        <div class="p-3">
+          登入
+          <!-- <router-link
             to="/login"
             @click="isMenuOpen = false"
             class="hover:text-orange-300 transition-colors flex items-center gap-2"
           >
             <i class="fas fa-user-plus"></i>
             登入
-          </router-link>
+          </router-link> -->
         </div>
         <!-- New Profile Dropdown -->
-        <div v-else class="relative" ref="profileMenu">
+        <!-- <div v-else class="relative" ref="profileMenu">
           <button
             @click="isProfileMenuOpen = !isProfileMenuOpen"
             class="min-w-10"
@@ -129,7 +134,6 @@
               >
                 {{ user?.full_name }}
               </p>
-              <!-- <p class="text-sm text-gray-500">{{ user?.email }}</p> -->
             </div>
             <div class="border-t border-gray-200"></div>
             <button
@@ -139,7 +143,7 @@
               登出
             </button>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </nav>
@@ -147,9 +151,6 @@
 </template>
 
 <script setup>
-// isMenuOpen
-//   ? 'bg-[url(@/assets/images/Mobile/mobile_Bcakground_2.png)] bg-cover bg-center overflow-hidden'
-//   : '',
 import { ref, onMounted, provide, onBeforeUnmount } from "vue";
 // import { useAuth } from "@/stores/auth";
 import { useRouter } from "vue-router";
