@@ -1,1 +1,0 @@
-import{c as r,o as s}from"./index-D6kPsB27.js";const _=(t,c)=>{const e=t.__vccOpts||t;for(const[o,n]of c)e[o]=n;return e},a={};function f(t,c){return s(),r("h1",null,"SDGs")}const p=_(a,[["render",f]]);export{p as default};
