@@ -67,6 +67,18 @@
         <div class="p-3">首頁</div>
       </router-link>
       <router-link
+        to="/about"
+        class="px-4 text-rice-500 text-shadow-3d"
+        @click="isMenuOpen = false"
+        :class="{
+          'pointer-events-none text-orange-300': $route.path === '/about',
+        }"
+      >
+        <div class="p-3 md:p-3">
+          <span>校園探索</span>
+        </div>
+      </router-link>
+      <router-link
         to="/actions"
         class="px-4 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
