@@ -1,11 +1,15 @@
 <template>
-  <main class="h-screen w-screeen flex flex-col items-center justify-center">
+  <main
+    class="h-screen w-screeen relative flex flex-col justify-center items-center lg:flex-none bg-[url('@/assets/images/Web_v2_N_Bcakground.webp')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound_v2_N_Hemei.webp')]"
+  >
     <!-- School Title -->
-    <section>
-      <div>彰化縣長安小學</div>
+    <section class="lg:absolute lg:top-8 lg:left-8">
+      <div>彰化縣</div>
+      <div>長安</div>
+      <div>國小</div>
     </section>
     <!-- Menu Buttons -->
-    <section class="">
+    <section class="h-full flex items-center lg:items-end justify-center">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
