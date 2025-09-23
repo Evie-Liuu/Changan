@@ -8,6 +8,27 @@
       <div>長安</div>
       <div>國小</div>
     </section>
+    <!-- Cover -->
+    <section class="">
+      <div
+        :class="[
+          'transition-all duration-3000 ease-out',
+          isLoaded ? 'opacity-100' : 'opacity-0',
+        ]"
+        class="lg:w-220 lg:h-full flex items-center justify-center lg:justify-start"
+      >
+        <img
+          :src="IceCreamMelting"
+          class="pointer-events-none select-none"
+          alt="Hemei_cover"
+        />
+        <!-- <img
+          :src="IceCreamMelting_mobile"
+          class="block lg:hidden pointer-events-none select-none"
+          alt="Hemei_cover"
+        /> -->
+      </div>
+    </section>
     <!-- Menu Buttons -->
     <section class="h-full flex items-center lg:items-end justify-center">
       <div
@@ -15,7 +36,7 @@
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="flex flex-col lg:flex-row pt-8 lg:pt-0 lg:gap-5 items-center justify-center text-xl lg:text-2xl"
+        class="flex flex-col lg:flex-row lg:gap-5 items-center justify-center text-xl lg:text-2xl lg:pb-25"
       >
         <router-link
           to="/about"
@@ -24,9 +45,9 @@
           @mouseleave="hoveredIndex = null"
         >
           <img
-            :src="hoveredIndex === 0 ? paint1Selected : paint1Unselected"
+            :src="hoveredIndex === 0 ? button1Selected : button1Unselected"
             class="pointer-events-none select-none w-52 lg:w-auto"
-            alt="Paint_1"
+            alt="Button_1"
           />
           <span
             class="absolute inset-0 flex items-center justify-center text-white ps-5 tracking-widest"
@@ -39,9 +60,9 @@
           @mouseover="hoveredIndex = 1"
           @mouseleave="hoveredIndex = null"
           ><img
-            :src="hoveredIndex === 1 ? paint2Selected : paint2Unselected"
+            :src="hoveredIndex === 1 ? button2Selected : button2Unselected"
             class="pointer-events-none select-none w-52 lg:w-auto"
-            alt="Paint_2"
+            alt="Button_2"
           />
           <span
             class="absolute inset-0 flex items-center justify-center text-white ps-5 tracking-widest"
@@ -54,9 +75,9 @@
           @mouseover="hoveredIndex = 2"
           @mouseleave="hoveredIndex = null"
           ><img
-            :src="hoveredIndex === 2 ? paint3Selected : paint3Unselected"
+            :src="hoveredIndex === 2 ? button3Selected : button3Unselected"
             class="pointer-events-none select-none w-52 lg:w-auto"
-            alt="Paint_3"
+            alt="Button_3"
           />
           <span
             class="absolute inset-0 flex items-center justify-center text-white ps-5 tracking-widest"
@@ -69,14 +90,13 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-// import ChinesePaintingRing from "@/assets/images/ChinesePaintingRing_v2_Hemei_2.webp";
-// import ChinesePaintingRing_mobile from "@/assets/images/Mobile_ChinesePaintingRing_v2_Hemei2.png";
-import paint1Unselected from "@/assets/images/Paint_1_v2_Unselected.png";
-import paint1Selected from "@/assets/images/Paint_1_v2_Selected.png";
-import paint2Unselected from "@/assets/images/Paint_2_v2_Unselected.png";
-import paint2Selected from "@/assets/images/Paint_2_v2_Selected.png";
-import paint3Unselected from "@/assets/images/Paint_3_v2_Unselected.png";
-import paint3Selected from "@/assets/images/Paint_3_v2_Selected.png";
+import IceCreamMelting from "@/assets/images/ice_cream_community.png";
+import button1Unselected from "@/assets/images/Paint_1_v2_Unselected.png";
+import button1Selected from "@/assets/images/Paint_1_v2_Selected.png";
+import button2Unselected from "@/assets/images/Paint_2_v2_Unselected.png";
+import button2Selected from "@/assets/images/Paint_2_v2_Selected.png";
+import button3Unselected from "@/assets/images/Paint_3_v2_Unselected.png";
+import button3Selected from "@/assets/images/Paint_3_v2_Selected.png";
 
 const hoveredIndex = ref(null);
 const isLoaded = ref(false);
