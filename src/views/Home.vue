@@ -1,9 +1,8 @@
 <template>
   <main
     :class="[
-      'h-screen w-screeen relative flex flex-col justify-center items-center gap-5 bg-[url(\'@/assets/images/Mobile/Mobile_Background.png\')] bg-cover bg-center overflow-hidden lg:bg-[url(\'@/assets/images/Web_Background.png\')]',
+      'h-screen w-screeen relative flex flex-col justify-center items-center gap-8 bg-[url(\'@/assets/images/Mobile/Mobile_Background.png\')] bg-cover bg-center overflow-hidden lg:bg-[url(\'@/assets/images/Web_Background.png\')]',
       'transition-all duration-2000 ease-out',
-      shouldMoveUp ? '-translate-y-8 lg:-translate-y-16' : 'translate-y-0'
     ]"
   >
     <!-- School Title -->
@@ -16,13 +15,14 @@
     </section>
 
     <!-- Cover -->
-    <section class="">
+    <section class="flex-shrink-0">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
+          shouldMoveUp ? 'lg:h-170' : 'lg:h-0',
         ]"
-        class="flex items-center justify-center lg:max-w-320"
+        class="flex items-center justify-center lg:max-w-320 lg:-translate-y-35"
       >
         <img
           :src="IceCreamMelting"
