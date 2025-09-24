@@ -6,7 +6,7 @@
   --color-orange-dark: #E5723A;
   --color-orange-default: #E99166;
   --color-orange-tint: #ECD7A3;
-  --color-green-text: #1A4B3E;
+  --color-green-dark: #1A4B3E;
 }
 
 body {
@@ -37,14 +37,14 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("@/assets/images/Backgound_N_Hemei.webp");
+  background-image: url("@/assets/images/Web_Background_Common2.png");
   background-size: cover;
   background-position: center;
 }
 
 @media (max-width: 768px) {
   .page-background {
-    background-image: url("@/assets/images/Web_N_Bcakground.webp");
+    background-image: url("@/assets/images/Mobile/Mobile_Background_Common1.png");
   }
 }
 
