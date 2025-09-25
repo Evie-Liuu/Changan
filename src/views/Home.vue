@@ -1,28 +1,33 @@
 <template>
   <main
     :class="[
-      'h-screen w-screeen relative flex flex-col justify-center items-center gap-8 bg-[url(\'@/assets/images/Mobile/Mobile_Background.png\')] bg-cover bg-center overflow-hidden lg:bg-[url(\'@/assets/images/Web_Background.png\')]',
+      'relative h-screen w-screeen flex flex-col justify-center items-center lg:gap-8 bg-[url(\'@/assets/images/Mobile/Mobile_Background.png\')] bg-cover bg-center overflow-hidden lg:bg-[url(\'@/assets/images/Web_Background.png\')]',
       'transition-all duration-2000 ease-out',
     ]"
   >
-    <!-- School Title -->
-    <section class="lg:absolute lg:-top-2 lg:right-10">
+    <!-- School Logo -->
+    <div class="absolute w-full h-full top-0 left-0">
       <img
-        src="@/assets/images/ChangAn_Logo.png"
-        class="hidden lg:block pointer-events-none select-none w-35"
+        src="@/assets/images/Web_ChangAn_Logo.png"
+        class="hidden lg:block absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
         alt="Changan_logo"
       />
-    </section>
+      <img
+        src="@/assets/images/Mobile/Mobile_ChangAn_Logo.png"
+        class="block lg:hidden absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
+        alt="Changan_logo"
+      />
+    </div>
 
     <!-- Cover -->
-    <section class="flex-shrink-0">
+    <section class="flex-shrink-0 z-50">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
-          shouldMoveUp ? 'lg:h-170' : 'lg:h-0',
+          shouldMoveUp ? 'lg:h-140' : 'lg:h-0',
         ]"
-        class="flex items-center justify-center lg:max-w-320 lg:-translate-y-35"
+        class="flex items-center justify-center lg:pt-8 lg:max-w-290 lg:-translate-y-35"
       >
         <img
           :src="IceCreamMelting"
@@ -37,13 +42,13 @@
       </div>
     </section>
     <!-- School Title -->
-    <section class="">
+    <section class="z-50">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="lg:w-180 flex items-center justify-center lg:justify-start"
+        class="lg:max-w-180 flex items-center justify-center lg:justify-start"
       >
         <img
           src="@/assets/images/ChangAn_School_title.png"
@@ -54,14 +59,14 @@
     </section>
     <!-- Menu Buttons -->
     <section
-      class="h-full flex items-center justify-center font-bold text-green-dark"
+      class="h-full flex items-center justify-center font-bold text-green-dark translate-y-0 2xl:-translate-y-4 z-50"
     >
       <div
         :class="[
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="flex flex-col lg:flex-row lg:gap-20 items-center justify-center text-xl lg:text-2xl lg:pb-25"
+        class="flex flex-col pt-4 lg:flex-row lg:gap-20 items-center justify-center text-xl lg:text-2xl lg:p-0 lg:pb-25"
       >
         <router-link
           to="/about"
@@ -71,41 +76,41 @@
         >
           <img
             :src="hoveredIndex === 0 ? button1Selected : buttonUnselected"
-            class="pointer-events-none select-none w-52 lg:w-60"
+            class="pointer-events-none select-none w-48 lg:w-60"
             alt="Button_1"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center tracking-widest -translate-y-4"
+            class="absolute inset-0 flex items-center justify-center tracking-widest -translate-y-3.5 lg:-translate-y-4"
             >校園探索</span
           >
         </router-link>
         <router-link
           to="/actions"
-          class="relative"
+          class="relative -translate-y-5 lg:translate-y-0"
           @mouseover="hoveredIndex = 1"
           @mouseleave="hoveredIndex = null"
           ><img
             :src="hoveredIndex === 1 ? button2Selected : buttonUnselected"
-            class="pointer-events-none select-none w-52 lg:w-60"
+            class="pointer-events-none select-none w-48 lg:w-60"
             alt="Button_2"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center tracking-widest -translate-y-4"
+            class="absolute inset-0 flex items-center justify-center tracking-widest -translate-y-3.5 lg:-translate-y-4"
             >SDGs行動</span
           ></router-link
         >
         <router-link
           to="/sdgs"
-          class="relative"
+          class="relative -translate-y-10 lg:translate-y-0"
           @mouseover="hoveredIndex = 2"
           @mouseleave="hoveredIndex = null"
           ><img
             :src="hoveredIndex === 2 ? button3Selected : buttonUnselected"
-            class="pointer-events-none select-none w-52 lg:w-60"
+            class="pointer-events-none select-none w-48 lg:w-60"
             alt="Button_3"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center tracking-widest -translate-y-4"
+            class="absolute inset-0 flex items-center justify-center tracking-widest -translate-y-3.5 lg:-translate-y-4"
             >SDGs成果</span
           ></router-link
         >
