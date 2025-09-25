@@ -75,7 +75,7 @@ body {
 }
 
 .loader {
-  width: 150px;
+  width: 220px;
   height: auto;
   animation: float 2s ease-in-out infinite;
   margin-bottom: 20px;
